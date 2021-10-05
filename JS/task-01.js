@@ -1,3 +1,4 @@
+chrome_options.add_argument('--log-level=1')
 const categoriesListEl = document.querySelector("#categories");
 
 const categoriesEl = categoriesListEl.querySelectorAll(".item");
