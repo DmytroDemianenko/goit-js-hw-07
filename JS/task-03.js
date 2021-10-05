@@ -19,9 +19,12 @@ console.log(galleryEl);
 const galleryItemEl = images.map((element) => {
   const item = document.createElement("li");
   const imagesEl = document.createElement("img");
-  item.insertAdjacentHTML("beforeend", "imagesEl");
-  // console.log(imagesEl);
-  // console.log(item);
+  imagesEl.src = element["url"];
+  imagesEl.alt = element["alt"];
+  imagesEl.width = 480;
+  item.appendChild(imagesEl);
   return item;
 });
 console.log(galleryItemEl);
+
+galleryEl.append(...galleryItemEl);
