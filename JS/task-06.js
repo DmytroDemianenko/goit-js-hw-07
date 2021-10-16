@@ -1,28 +1,15 @@
 const inputEl = document.querySelector("#validation-input");
+const length = inputEl.getAttribute("data-length");
+console.log(length);
 
-function onInputBlur() {
-  console.log(`Input has lost a Focus`);
-}
 inputEl.addEventListener("input", onInputBlur);
-
-function inputMarkupCheking() {
-  if (inputEl["data-length"] === inputEl.innerHTML) {
+function onInputBlur(e) {
+  console.log(e.currentTarget.value.length);
+  if (length != e.currentTarget.value.length) {
+    inputEl.classList.add("invalid");
     console.log("Ok");
+  } else {
+    inputEl.classList.remove("invalid");
+    inputEl.classList.add("valid");
   }
 }
-
-console.log(inputEl.innerHTML);
-// function onInputFocus() {
-//   // console.log(`Input take a Focus`);
-// }
-
-// inputEl.addEventListener("input", onInputFocus);
-// function checkInput(event) {
-//   if (input.value.length === data - length.textContent)
-//     inputEl.classList.add = ".#validation-input.valid";
-// }
-
-// function onInputChange() {
-//   // console.log(`Input has changed`);
-// }
-// input.addEventListener("input", onInputChange);
