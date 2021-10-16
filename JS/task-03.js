@@ -14,7 +14,6 @@ const images = [
 ];
 
 const galleryEl = document.querySelector("#gallery");
-console.log(galleryEl);
 
 const galleryItemEl = images.map((element) => {
   const item = document.createElement("li");
@@ -25,6 +24,4 @@ const galleryItemEl = images.map((element) => {
   item.appendChild(imagesEl);
   return item;
 });
-console.log(galleryItemEl);
-
 galleryEl.append(...galleryItemEl);
